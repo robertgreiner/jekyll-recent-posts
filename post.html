@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+<!-- Post Details -->
+<article class="post">
+    <h1 class="post-title">{{ page.title }}</h1>
+    <div class="post-date"><span>Written by <a href="/about">Robert Greiner</a></span> on <span class="date">{{ page.date | date: "%B %d, %Y" }}</span></div>
+    <div class="clear"></div>
+    <div>{{ content }}</div>
+
+    <div class="clear"></div>
+    <div class="license">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/deed.en_US"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/80x15.png" /></a>
+    </div>
+    <div class="clear"></div>
+</article>
+
+
+<!-- Recent and Popular Posts -->
+<div class="row">
+    <div class="large-6 small-12 columns">
+        <h2>Popular Posts</h2>
+       
+    </div>
+    <div class="large-6 small-12 columns">
+        <h2>Recent Posts</h2>
+        <ul class="posts">  
+            {% for post in site.posts limit:5 %}  
+               <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>  
+            {% endfor %}  
+        </ul>
+    </div>
+</div>
+
+<hr />
